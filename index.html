@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<title>דנה אסולין · סדנת צילום וביטחון עצמי לנערות</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="סדנת צילום וביטחון עצמי לנערות בגילאי 10–12 · מושב משמר השבעה · דנה אסולין" />
+<meta property="og:title" content="דנה אסולין · סדנת צילום וביטחון עצמי לנערות" />
+<meta property="og:description" content="סדנת צילום וביטחון עצמי לנערות בגילאי 10–12" />
+<meta property="og:image" content="assets/v2-hero.jpeg" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@200;300;400;500;700;900&family=Assistant:wght@200;300;400;500;600;700&family=Noto+Serif+Hebrew:wght@300;400;500;600;700&family=Suez+One&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #e9e5dd;
+    font-family: 'Assistant', system-ui, sans-serif;
+    color: #2a221d;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px 12px;
+  }
+
+  /* Mobile-frame — desktop preview only. On phones we go fullbleed. */
+  .mf-shell {
+    width: 390px;
+    max-width: 100%;
+    border-radius: 38px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 60px -20px rgba(40,30,25,0.18), 0 0 0 1px rgba(0,0,0,0.07);
+    background: #fff;
+  }
+  .mf-statusbar {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 26px;
+    font: 600 14px/1 -apple-system, system-ui;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    pointer-events: none;
+  }
+  .mf-statusbar.dark { color: #fff; }
+  .mf-statusbar.light { color: #2a221d; }
+  .mf-statusbar .icons { display: flex; gap: 5px; align-items: center; }
+  .mf-statusbar .icons svg { width: 16px; height: 11px; }
+  .mf-notch {
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px; height: 32px;
+    border-radius: 20px;
+    background: #1a1410;
+    z-index: 60;
+    pointer-events: none;
+  }
+  .mf-bottom-bar { height: 18px; display: flex; align-items: center; justify-content: center; }
+  .mf-bottom-bar::after {
+    content: '';
+    width: 130px; height: 4px; border-radius: 2px;
+    background: rgba(0,0,0,0.25);
+  }
+
+  /* On real phones — drop the bezel chrome and fill the screen. */
+  @media (max-width: 480px) {
+    body { padding: 0; background: #fbf6ef; }
+    .mf-shell { width: 100%; border-radius: 0; box-shadow: none; }
+    .mf-statusbar, .mf-notch, .mf-bottom-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="image-slot.js"></script>
+
+<script>
+  window.TWEAK_DEFAULTS = {
+    "price": "1,500 ₪",
+    "headline": "ביטחון עצמי מתחיל מבפנים — ונראה מבחוץ",
+    "subhead": "סדנת צילום וביטחון עצמי לנערות בגילאי 10–12",
+    "firstMeetingDay": "יום ראשון",
+    "firstMeetingTime": "14:00",
+    "address": "מושב משמר השבעה",
+    "addressDetail": "רחוב יצחק קורדובה 73",
+    "whatsappText": "היי דנה, אני מתעניינת בסדנה",
+    "instagramHandle": "@dana.asulin"
+  };
+</script>
+
+<script type="text/babel" src="variants.jsx"></script>
+
+<script type="text/babel">
+  function App() {
+    return <V2Soft tweaks={window.TWEAK_DEFAULTS} />;
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
